@@ -16,7 +16,8 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+{{--            @include('layouts.navigation')--}}
+            @include('layouts.nav')
 
             <!-- Page Heading -->
             @isset($header)
@@ -28,9 +29,11 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            <main style="margin-top: 80px;">
+                @yield('content')
             </main>
+
+            @include('layouts.footer')
         </div>
     </body>
 </html>
